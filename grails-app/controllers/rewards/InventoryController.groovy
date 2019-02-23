@@ -17,9 +17,10 @@ class InventoryController {
     }
 
     def list(){
-        /*Goto that domain called Product and give me a list of everything inside it*/
+        /*Goto that domain called Product
+        and give me a list of everything inside it*/
         def allProducts = Product.list()
-        [viewAllProducts: allProducts]
+        [listOfAllProducts: allProducts]
     }
 
 

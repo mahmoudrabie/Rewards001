@@ -1,9 +1,11 @@
 package rewards
 
 class Product {
-    String name
-    String sku
-    Float price
+    String productName
+    String productSKU
+    Float productPrice
+
+    static hasMany = [orderItems:OrderItem]
 
     static constraints = {
     }
