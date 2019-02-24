@@ -8,5 +8,6 @@ class Award {
     static belongsTo = [customer:Customer]
 
     static constraints = {
+        awardType(inList: ["Purchase","Reward"])
     }
 }
