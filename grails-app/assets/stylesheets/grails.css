@@ -3,6 +3,7 @@ html, code, kbd, pre, samp {
     -webkit-text-size-adjust: 100%;
 }
 
+
 html, body {
     height: 100%;
     -webkit-overflow-scrolling: touch;
@@ -43,10 +44,12 @@ pre {
     width: 40px;
 
 }
+
 .navbar-dark, .navbar-static-top {
-    background-color: #424649;
+    background-color: #c7c9cb;
     border: 0px;
 }
+
 a.navbar-brand {
     color: white !important;
     font-size: 19px !important;
