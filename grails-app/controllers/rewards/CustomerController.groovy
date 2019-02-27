@@ -3,6 +3,7 @@ package rewards
 class CustomerController {
     static scaffold = Customer
 
+    def customerBusinessService
 
     def checkin(){
 
@@ -22,7 +23,7 @@ class CustomerController {
     def index(){
 //        params.max = 10
         def allCustomers = Customer.list()
-        render(view: "index",model: [customerInstanceList: allCustomers])
+        respond allCustomers
     }
 
     def create(){
@@ -32,11 +33,18 @@ class CustomerController {
     def show() {
         def customer = Customer.get(params.id)
         respond customer
+
+    }
+
+    def edit(Long id) {
+        def customer = Customer.get(params.id)
+        respond customer
     }
 
     def profile(){
         def customer = Customer.findByCustomerPhone(params.id)
-        [customerInstance: customer]
+
+        [customerInstance: customerBusinessService.getTotalPoints(customer)]
     }
 
 

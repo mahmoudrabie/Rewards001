@@ -44,8 +44,6 @@
 					<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'customerPhone', 'error')} required">
 						<span id="phone-label" class="property-label"><g:message code="customer.phone.label" default="customerPhone" /></span>
 						<span class="property-value" aria-labelledby="phone-label">
-							%{--<g:fieldValue bean="${customerInstance}" --}%
-										  %{--field="customerPhone"/>--}%
 							<g:phone334 phone="${customerInstance.customerPhone}"/>
 						</span>
 					</div>
