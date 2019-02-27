@@ -12,12 +12,13 @@
 		</div>
 		
 		<div class="col-sm-6"> <!-- Begin Right Column -->
-			<g:textField name="phone" class="form-control"
+			<g:textField disabled="true" name="phone" class="form-control"
 						 placeholder="Enter your cell number to check in" />
+			<g:currencySelect name="myCurrency" value="${currency}" />
+			<g:countrySelect name="myCountry" value="${country}" />
 			<div class="row"> <!-- First Button Row Spacer -->
-				<h3></h3>
+				<h1></h1>
 			</div>
-
 			<div class="row"> <!-- First Button Row -->
 				<div class="col-sm-4">
 					<input class="btn btn-primary btn-lg btn-block"
@@ -37,7 +38,7 @@
 			</div>
 			
 			<div class="row"> <!-- Second Button Row Spacer -->
-				<h3></h3>
+				<h1></h1>
 			</div>
 			<div class="row"> <!-- Second Button Row -->
 				<div class="col-sm-4">
@@ -58,7 +59,7 @@
 			</div>
 			
 			<div class="row"> <!-- Third Button Row Spacer -->
-				<h3></h3>
+				<h1></h1>
 			</div>
 			<div class="row"> <!-- Third Button Row -->
 				<div class="col-sm-4">
@@ -73,13 +74,18 @@
 			</div>
 			
 			<div class="row"> <!-- Fourth Button Row Spacer -->
-				<h3></h3>
+				<h1></h1>
 			</div>
-
 			<div class="row"> <!-- Fourth Button Row -->
 				<div class="col-sm-4">
-					<input class="btn btn-danger btn-lg btn-block"
-						   type="button" name="pad" value="Del" />
+					%{--<input class="btn btn-danger btn-lg btn-block"--}%
+						   %{--type="button" name="pad" value="Del" />--}%
+					<g:link class="btn btn-danger btn-lg btn-block"
+							action="checkin">
+						Del
+					</g:link>
+
+
 				</div>
 				<div class="col-sm-4">
 					<input class="btn btn-primary btn-lg btn-block"
@@ -87,8 +93,12 @@
 						   onclick="padkey(this.value)"/>
 				</div>
 				<div class="col-sm-4">
-					<input class="btn btn-success btn-lg btn-block"
+					%{--<input class="btn btn-success btn-lg btn-block"--}%
+						   %{--type="button" name="pad" value="Go" />--}%
+					<g:submitButton class="btn btn-success btn-lg btn-block"
 						   type="button" name="pad" value="Go" />
+
+
 				</div>
 			</div>
 		
@@ -100,6 +110,12 @@
 <script> function padkey(num) {
 	var txt=document.getElementById("phone").value;
 	txt=txt + num;
-	document.getElementById("phone").value=txt;
+	if(txt.length<=10)
+	{
+		document.getElementById("phone").value=txt;
+	}
+	else{
+		console.log("Invalid phone");
+	}
 	}
 </script>

@@ -47,6 +47,8 @@
     <label for="marketing">
         How did you hear about us?
     </label>
-    <g:select from="['Internet','Friend','Other']" name="marketing"
-                value="${marketing}"/>
+    <g:select from="['Internet','Friend','Other']"
+              name="marketing"
+              noSelection="['':'Choose the source']"
+              value="${marketing}"/>
 </div>

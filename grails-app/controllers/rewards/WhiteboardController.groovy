@@ -12,19 +12,19 @@ class WhiteboardController {
         render("<p><b>Total</b> : "+myTotal)
         render("</br>"+myTotal.class)
         myTotal = myTotal + 1
-        render("</br> New Total : "+myTotal.class)
+        render("</br> New Total : "+myTotal)
 
         def firstName = "Mahmoud"
         render("<p><b>First Name</b> : "+firstName)
         render("</br>"+firstName.class)
         firstName = firstName + 1
-        render("</br> New First Name : "+firstName.class)
+        render("</br> New First Name : "+firstName)
 
         def today = new Date()
         render("<p><b>Today</b> : "+today)
         render("</br>"+today.class)
         today = today + 1
-        render("</br> New Date : "+today.class)
+        render("</br> New Date : "+today)
     }
 
     def strings(){
