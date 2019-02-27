@@ -43,12 +43,16 @@
 					
 					<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'customerPhone', 'error')} required">
 						<span id="phone-label" class="property-label"><g:message code="customer.phone.label" default="customerPhone" /></span>
-						<span class="property-value" aria-labelledby="phone-label"><g:fieldValue bean="${customerInstance}" field="customerPhone"/></span>
+						<span class="property-value" aria-labelledby="phone-label">
+							%{--<g:fieldValue bean="${customerInstance}" --}%
+										  %{--field="customerPhone"/>--}%
+							<g:phone334 phone="${customerInstance.customerPhone}"/>
+						</span>
 					</div>
 					
 					<div class="fieldcontain ${hasErrors(bean: customerInstance, field: 'email', 'error')} ">
 						<label for="customerEmail">
-							<g:message code="customer.email.label" default="customerEmail" />
+							<g:message code="customer.customerEmail.label" default="customerEmail" />
 							
 						</label>
 						<g:textField name="customerEmail" value="${customerInstance?.customerEmail}"/>
@@ -86,7 +90,7 @@
 				<g:each in="${customerInstance.awards}" status="i" var="checkinInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td>${fieldValue(bean: checkinInstance, field: "type")}</td>
+						<td>${fieldValue(bean: checkinInstance, field: "awardType")}</td>
 					
 						<td>${fieldValue(bean: checkinInstance, field: "awardDate")}</td>
 					

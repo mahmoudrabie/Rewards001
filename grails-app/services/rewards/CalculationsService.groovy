@@ -1,9 +1,22 @@
 package rewards
 
-import grails.gorm.transactions.Transactional
+import grails.gorm.services.Service
 
-@Transactional
+@Service(Customer)
 class CalculationsService {
+
+    def getTotalPoints(Customer aCustomer){
+        def totalAwards = 0
+        aCustomer.awards.each {
+            totalAwards = totalAwards + it.points
+        }
+        aCustomer.totalPoints = totalAwards
+        return aCustomer
+    }
+
+    def hi(){
+        render "hi"
+    }
 
     def welcome(passedParams) {
         def firstName = passedParams.first
